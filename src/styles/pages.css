@@ -1,0 +1,25 @@
+/* Grid children that are wrapped (Reveal) still stretch their card to equal height. */
+.bento > *, .cards-3 > * { display: grid; min-width: 0; }
+.bento > * > .pcard, .cards-3 > * > .pcard, .cards-3 > * > .way, .cards-3 > * > .story, .cards-3 > .way, .cards-3 > .card, .cards-3 > .pcard { height: 100%; }
+.split-2 > * { min-width: 0; }
+@media (min-width: 960px) { .split-2.sticky-first > :first-child { position: sticky; top: calc(var(--header-h) + 24px); } }
+.section-head.reveal { margin-bottom: clamp(32px, 4vw, 56px); }
+.hero h1 { max-width: 16ch; }
+.page-hero .icon-tile { width: 64px; height: 64px; }
+.crumbs { margin-bottom: 6px; }
+.prose p.lead { max-width: none; }
+.prose .eyebrow { width: fit-content; }
+@media (max-width: 520px) {
+  .calc-result li { grid-template-columns: auto 1fr; }
+  .calc-result li .badge { grid-column: 2; justify-self: start; }
+  .hero-trust { flex-direction: column; }
+  .floating { right: 12px; bottom: 12px; }
+}
+@media print {
+  .site-header, .utility-bar, .concept-bar, .floating, .site-footer .footer-top, .hero-art, .arcs { display: none !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  body { background: #fff; }
+}
+
+/* While a page chunk loads, hold the space so the footer does not jump into view afterwards. */
+.page-loading { min-height: 100vh; padding-top: 80px; color: var(--muted); }

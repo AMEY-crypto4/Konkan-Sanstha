@@ -1,0 +1,101 @@
+/* Self-hosted fonts: no third-party font requests, better privacy and no layout flash from a CDN. */
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('../assets/fonts/inter-latin-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* The rupee sign (U+20B9) is the only character the site needs outside Latin, so it ships as a tiny subset
+   (about 1 KB) instead of the whole latin-ext file. */
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('../assets/fonts/inter-rupee-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+20B9;
+}
+/* Metric-matched fallback: while Inter loads, Arial is scaled to Inter's proportions so text does not jump. */
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('Arial'), local('Helvetica Neue'), local('Helvetica');
+  size-adjust: 107.4%;
+  ascent-override: 90.2%;
+  descent-override: 22.48%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Fraunces Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('../assets/fonts/fraunces-latin-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  /* Brand: indigo for trust, saffron for action, sunflower for light. */
+  --indigo-950: #0d0b2a;
+  --indigo-900: #17134a;
+  --indigo-800: #221c6e;
+  --indigo-700: #2f2891;
+  --indigo-600: #3d34b0;
+  --indigo-200: #cfc9f5;
+  --indigo-100: #e9e6fb;
+  --indigo-50: #f4f2fd;
+
+  --saffron-700: #9a3412;
+  --saffron-600: #c2410c;
+  --saffron-500: #f26b1d;
+  --saffron-400: #ff8a3d;
+  --saffron-100: #ffe9d9;
+  --saffron-50: #fff5ec;
+
+  --sun-500: #f5b100;
+  --sun-400: #ffc53d;
+  --sun-300: #ffd978;
+  --sun-100: #fff1c7;
+
+  --leaf-700: #145740;
+  --leaf-600: #1f7a5c;
+  --leaf-100: #dcf2e9;
+
+  --rose-700: #a02f5b;
+  --rose-100: #fbe4ee;
+
+  /* Neutrals are warm so the page feels human, not clinical. */
+  --bg: #fbf8f2;
+  --bg-soft: #f4efe5;
+  --surface: #ffffff;
+  --line: #e7dfd0;
+  --line-strong: #d6ccb8;
+  --ink: #17143f;
+  --text: #2a2750;
+  --muted: #565370;
+  --on-dark: #f3f1ff;
+  --on-dark-muted: #c4bfe8;
+
+  --danger: #b42318;
+  --ok: #1f7a5c;
+
+  --font-body: 'Inter Variable', 'Inter Fallback', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Fraunces Variable', 'Inter Variable', Georgia, serif;
+
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 24px;
+  --r-xl: 32px;
+
+  --shadow-1: 0 1px 2px rgba(23, 19, 74, 0.06), 0 2px 8px rgba(23, 19, 74, 0.05);
+  --shadow-2: 0 2px 4px rgba(23, 19, 74, 0.06), 0 12px 32px rgba(23, 19, 74, 0.1);
+  --shadow-3: 0 4px 8px rgba(23, 19, 74, 0.08), 0 28px 64px rgba(23, 19, 74, 0.18);
+
+  --gutter: clamp(20px, 4.2vw, 48px);
+  --container: 1240px;
+  --header-h: 76px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
